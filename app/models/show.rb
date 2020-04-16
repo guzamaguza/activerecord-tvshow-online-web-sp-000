@@ -2,7 +2,7 @@ class Show < ActiveRecord::Base
   attr_accessor :name, :network, :day, :rating, :season
 
   def Show::highest_rating
-    Show.maximum(:rating)
+    Show.maximum(rating:)
   end
 
   def Show::most_popular_show
@@ -10,7 +10,7 @@ class Show < ActiveRecord::Base
   end
 
   def Show::lowest_rating
-    Show.minimum(:rating).value
+    Show.minimum(rating:).value
   end
 
   def Show::least_popular_show
@@ -19,7 +19,7 @@ class Show < ActiveRecord::Base
 
   def ratings_sum
     #returns the sum of all of the ratings
-    Show.sum(:rating)
+    Show.sum(rating:)
   end
 
   def popular_shows
