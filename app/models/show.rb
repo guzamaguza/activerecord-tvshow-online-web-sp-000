@@ -1,8 +1,8 @@
 class Show < ActiveRecord::Base
-  attr_accessor :name, :network, :day, :rating, :season
+  attr_accessor :name, :network, :day, :season
 
   def Show::highest_rating
-    Show.maximum("rating")
+    Show.maximum(:rating)
   end
 
   def Show::most_popular_show
